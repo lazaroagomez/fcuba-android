@@ -33,7 +33,10 @@ def getSwvProperties() {
 def swvProps = getSwvProperties()
 
 android {
-	namespace swvProps.getProperty('build.application.id', 'mgks.os.swv')
+	// Namespace stays at the original package of the Java sources so `import mgks.os.swv.R`
+	// and sibling imports across the codebase keep resolving. applicationId (Play Store id)
+	// is separate and is set from swv.properties below.
+	namespace 'mgks.os.swv'
 	compileSdk swvProps.getProperty('build.sdk.compile', '36').toInteger()
 
 	defaultConfig {
