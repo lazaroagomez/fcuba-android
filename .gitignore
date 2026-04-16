@@ -50,3 +50,8 @@ aicontext.json
 genctx.json
 .vscode/
 /docmd/node_modules
+
+# Signing (never commit keystores)
+keystore.jks
+*.keystore
+*.jks
